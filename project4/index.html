@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beluga Health | Premium Telemedicine & Virtual Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        
+        body { font-family: 'Plus+Jakarta+Sans', sans-serif; }
+        
+        .medical-gradient {
+            background: radial-gradient(circle at top right, #eff6ff, #ffffff);
+        }
+        
+        .hero-clip {
+            border-radius: 40% 60% 60% 40% / 30% 30% 70% 70%;
+        }
+
+        .step-card:hover .step-number {
+            transform: translateY(-5px);
+            background-color: #2563eb;
+            color: white;
+        }
+    </style>
+</head>
+<body class="text-slate-900 selection:bg-blue-100">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                    <i class="fas fa-whale text-xl"></i>
+                </div>
+                <span class="text-2xl font-800 tracking-tighter text-slate-900">Beluga<span class="text-blue-600">Health</span></span>
+            </div>
+            <div class="hidden md:flex gap-10 font-semibold text-slate-600">
+                <a href="#treatments" class="hover:text-blue-600 transition">Treatments</a>
+                <a href="#how-it-works" class="hover:text-blue-600 transition">Process</a>
+                <a href="#doctors" class="hover:text-blue-600 transition">Our Doctors</a>
+            </div>
+            <button class="bg-slate-900 text-white px-7 py-3 rounded-full font-bold hover:bg-blue-600 transition-all active:scale-95 shadow-lg shadow-slate-200">
+                Book Visit
+            </button>
+        </div>
+    </nav>
+
+    <section class="medical-gradient pt-16 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
+                    </span>
+                    <span class="text-blue-700 text-sm font-bold uppercase tracking-wider">Available 24/7 Nationwide</span>
+                </div>
+                <h1 class="text-6xl lg:text-7xl font-800 tracking-tight leading-[1.1]">
+                    Quality care <br><span class="text-blue-600 underline decoration-blue-200 underline-offset-8">delivered</span> to you.
+                </h1>
+                <p class="text-xl text-slate-500 leading-relaxed max-w-lg">
+                    Skip the drive and the wait. Get specialized medical care and prescriptions from top-rated US doctors in under 15 minutes.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-blue-700 transition shadow-2xl shadow-blue-200">Start My Consultation</button>
+                    <div class="flex items-center gap-4 px-2">
+                        <div class="flex -space-x-3">
+                            <img src="https://i.pravatar.cc/100?u=a" class="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="">
+                            <img src="https://i.pravatar.cc/100?u=b" class="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="">
+                            <img src="https://i.pravatar.cc/100?u=c" class="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="">
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold">4.9/5 Rating</p>
+                            <p class="text-xs text-slate-400">From 20,000+ patients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <div class="hero-clip w-full aspect-[4/5] bg-blue-100 overflow-hidden border-[12px] border-white shadow-2xl relative z-10">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover" alt="Telehealth Doctor">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-2xl z-20 border border-slate-50 flex items-center gap-4 animate-bounce-slow">
+                    <div class="bg-green-100 text-green-600 w-12 h-12 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-check-double text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs font-bold uppercase">Rx Status</p>
+                        <p class="font-bold text-slate-800">Prescription Sent!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-slate-400 font-bold text-sm uppercase tracking-[0.2em] mb-10">Trusted and Featured By</p>
+            <div class="flex flex-wrap justify-around items-center gap-8 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                <span class="text-2xl font-black italic tracking-tighter">Bloomberg</span>
+                <span class="text-2xl font-bold tracking-tight">Healthline</span>
+                <span class="text-2xl font-serif font-bold italic underline">The Cut</span>
+                <span class="text-2xl font-mono font-bold">WIRED</span>
+                <span class="text-2xl font-bold">WebMD</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="treatments" class="py-24 bg-slate-50/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center max-w-2xl mx-auto">
+                <h2 class="text-4xl font-800 mb-4">Personalized treatment for every need.</h2>
+                <p class="text-slate-500">From common colds to specialized chronic management, our doctors are experts in digital diagnostics.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[2.5rem] p-8 border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all group">
+                    <div class="h-48 overflow-hidden rounded-2xl mb-8">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Dermatology">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Dermatology</h3>
+                    <p class="text-slate-500 mb-6">Expert care for acne, eczema, and prescription skincare tailored to you.</p>
+                    <button class="text-blue-600 font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                        Explore <i class="fas fa-arrow-right text-sm"></i>
+                    </button>
+                </div>
+                <div class="bg-white rounded-[2.5rem] p-8 border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all group">
+                    <div class="h-48 overflow-hidden rounded-2xl mb-8">
+                        <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Mental Health">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Mental Health</h3>
+                    <p class="text-slate-500 mb-6">Talk to licensed therapists and manage medications for anxiety or depression.</p>
+                    <button class="text-blue-600 font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                        Explore <i class="fas fa-arrow-right text-sm"></i>
+                    </button>
+                </div>
+                <div class="bg-white rounded-[2.5rem] p-8 border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all group">
+                    <div class="h-48 overflow-hidden rounded-2xl mb-8">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Urgent Care">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Urgent Care</h3>
+                    <p class="text-slate-500 mb-6">Quick consultations for flu, infections, and refills in minutes, not hours.</p>
+                    <button class="text-blue-600 font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                        Explore <i class="fas fa-arrow-right text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">The Process</span>
+                <h2 class="text-4xl font-800 mt-2">Getting care is simple.</h2>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-12 relative">
+                <div class="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-slate-100 z-0"></div>
+                
+                <div class="relative z-10 bg-white p-8 rounded-3xl step-card text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 font-bold text-2xl step-number transition-all">1</div>
+                    <h3 class="text-xl font-bold mb-4">Complete your profile</h3>
+                    <p class="text-slate-500">Share your health history and current concerns via our secure, HIPAA-compliant intake form.</p>
+                </div>
+
+                <div class="relative z-10 bg-white p-8 rounded-3xl step-card text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 font-bold text-2xl step-number transition-all">2</div>
+                    <h3 class="text-xl font-bold mb-4">Meet your Doctor</h3>
+                    <p class="text-slate-500">Connect instantly via video or chat with a board-certified physician who understands your needs.</p>
+                </div>
+
+                <div class="relative z-10 bg-white p-8 rounded-3xl step-card text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 font-bold text-2xl step-number transition-all">3</div>
+                    <h3 class="text-xl font-bold mb-4">Receive Treatment</h3>
+                    <p class="text-slate-500">Your treatment plan is ready. Prescriptions are sent to your pharmacy or home within hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctors" class="py-24 bg-slate-900 text-white rounded-[4rem] mx-4 mb-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-5xl font-800 mb-8 leading-tight">Board-certified <br>physicians you can trust.</h2>
+                    <p class="text-slate-400 text-lg mb-10">We don't just hire any doctors. Our providers come from the nation's top medical schools and undergo rigorous clinical vetting.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl">Top-Tier Education</h4>
+                                <p class="text-slate-400">Our network includes alumni from Harvard, Stanford, and Johns Hopkins.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl">Patient-First Ethics</h4>
+                                <p class="text-slate-400">Average patient rating of 4.9/5 across 100k+ consultations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400" class="rounded-[2rem] h-64 w-full object-cover translate-y-12" alt="">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400" class="rounded-[2rem] h-64 w-full object-cover" alt="">
+                    </div>
+                    <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-blue-600 p-8 rounded-3xl text-center shadow-2xl min-w-[240px]">
+                        <p class="text-4xl font-black italic">500+</p>
+                        <p class="text-xs uppercase font-bold tracking-widest text-blue-100">Specialists on call</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-blue-600 rounded-[3.5rem] p-12 lg:p-24 relative overflow-hidden flex flex-col items-center text-center">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-50 -mr-20 -mt-20"></div>
+                
+                <div class="relative z-10 max-w-3xl">
+                    <h2 class="text-5xl lg:text-6xl font-800 text-white mb-8">Feel better starting today.</h2>
+                    <p class="text-blue-100 text-xl mb-12 leading-relaxed">Join 50,000+ people who have swapped the waiting room for the living room. Your health can't wait.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <button class="bg-white text-blue-600 px-10 py-5 rounded-2xl font-800 text-xl hover:bg-slate-900 hover:text-white transition-all shadow-xl">
+                            Book Appointment Now
+                        </button>
+                        <div class="text-white text-left hidden sm:block">
+                            <p class="flex items-center gap-2 font-bold"><i class="fas fa-check text-green-300"></i> Flat $45 per visit</p>
+                            <p class="flex items-center gap-2 font-bold"><i class="fas fa-check text-green-300"></i> All insurance accepted</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" class="w-full h-64 object-cover" alt="Happy patient">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-24 pb-12 px-6 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+            <div class="max-w-xs space-y-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+                        <i class="fas fa-whale"></i>
+                    </div>
+                    <span class="text-xl font-800 tracking-tighter">BelugaHealth</span>
+                </div>
+                <p class="text-slate-400 text-sm">Providing accessible, high-quality telemedicine for every American household since 2024.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+                <div class="space-y-4">
+                    <h5 class="font-bold">Services</h5>
+                    <ul class="text-slate-500 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-blue-600">Primary Care</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Prescriptions</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Urgent Care</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="font-bold">Company</h5>
+                    <ul class="text-slate-500 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-blue-600">Our Doctors</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between text-slate-400 text-xs gap-4">
+            <p>&copy; 2026 Beluga Health Inc. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
