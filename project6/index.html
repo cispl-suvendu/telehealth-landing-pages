@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<style>
+
+body{
+  margin:0;
+  overflow:hidden;
+  background:#05060a;
+}
+
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+    let scene, camera, renderer;
+let mesh, material;
+
+let mouse = new THREE.Vector2(0.5,0.5);
+
+init();
+animate();
+
+function init(){
+
+scene = new THREE.Scene();
+
+camera = new THREE.PerspectiveCamera(
+60,
+window.innerWidth/window.innerHeight,
+0.1,
+100
+);
+
+camera.position.z = 5;
+
+renderer = new THREE.WebGLRenderer({
+antialias:true,
+alpha:true
+});
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+document.body.appendChild(
+renderer.domElement
+);
+
+
+// geometry
+
+const geo =
+new THREE.PlaneGeometry(
+20,
+20,
+200,
+200
+);
+
+
+// shader
+
+material = new THREE.ShaderMaterial({
+
+uniforms:{
+
+uTime:{value:0},
+
+uMouse:{value:mouse},
+
+},
+
+vertexShader:`
+
+uniform float uTime;
+uniform vec2 uMouse;
+
+varying vec2 vUv;
+varying float vDepth;
+
+float noise(vec2 p){
+
+return sin(p.x*10.0)
+* sin(p.y*10.0);
+
+}
+
+void main(){
+
+vUv = uv;
+
+vec3 pos = position;
+
+float dist =
+distance(uv,uMouse);
+
+float wave =
+sin(pos.x*3.0+uTime)*0.2 +
+sin(pos.y*3.0+uTime)*0.2;
+
+float push =
+0.6/(dist+0.2);
+
+pos.z += wave;
+pos.z += push;
+
+vDepth = pos.z;
+
+gl_Position =
+projectionMatrix *
+modelViewMatrix *
+vec4(pos,1.0);
+
+}
+
+`,
+
+fragmentShader:`
+
+varying vec2 vUv;
+varying float vDepth;
+
+void main(){
+
+float gridX =
+step(0.97,fract(vUv.x*50.0));
+
+float gridY =
+step(0.97,fract(vUv.y*50.0));
+
+float grid =
+gridX + gridY;
+
+float glow =
+smoothstep(
+0.0,
+0.5,
+vDepth
+);
+
+vec3 color =
+vec3(
+0.1,
+0.3,
+1.0
+);
+
+vec3 finalColor =
+color * grid *
+(0.5 + glow);
+
+gl_FragColor =
+vec4(finalColor,1.0);
+
+}
+
+`,
+
+transparent:true
+
+});
+
+mesh =
+new THREE.Mesh(
+geo,
+material
+);
+
+scene.add(mesh);
+
+
+window.addEventListener(
+"mousemove",
+e=>{
+
+mouse.x =
+e.clientX/
+window.innerWidth;
+
+mouse.y =
+1 -
+e.clientY/
+window.innerHeight;
+
+material.uniforms
+.uMouse.value
+= mouse;
+
+}
+);
+
+
+window.addEventListener(
+"resize",
+onResize
+);
+
+}
+
+
+function onResize(){
+
+camera.aspect =
+window.innerWidth/
+window.innerHeight;
+
+camera.updateProjectionMatrix();
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+}
+
+
+function animate(){
+
+requestAnimationFrame(
+animate
+);
+
+material.uniforms
+.uTime.value += 0.02;
+
+renderer.render(
+scene,
+camera
+);
+
+}
+</script>
+
+</body>
+</html>

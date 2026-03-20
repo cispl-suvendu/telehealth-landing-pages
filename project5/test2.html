@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beluga Telehealth | Enterprise Medical Solutions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { background: #010409; color: #e6edf3; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        canvas { position: fixed; top: 0; left: 0; z-index: 1; pointer-events: none; }
+        .section { min-height: 100vh; position: relative; z-index: 2; padding: 100px 10%; display: flex; flex-direction: column; justify-content: center; }
+        .glass { background: rgba(13, 17, 23, 0.7); backdrop-filter: blur(15px); border: 1px solid rgba(48, 54, 61, 0.8); }
+        .stat-card { border-left: 4px solid #007AFF; }
+        #cursor-dot { width: 8px; height: 8px; background: #007AFF; border-radius: 50%; position: fixed; pointer-events: none; z-index: 100; box-shadow: 0 0 15px #007AFF; }
+    </style>
+</head>
+<body>
+
+    <div id="cursor-dot"></div>
+    <canvas id="canvas3d"></canvas>
+
+    <nav class="fixed w-full z-50 flex justify-between items-center px-10 py-6 border-b border-white/5 bg-black/50 backdrop-blur-xl">
+        <div class="text-2xl font-extrabold tracking-tighter">BELUGA<span class="text-blue-500">HEALTH</span></div>
+        <div class="flex gap-8 items-center">
+            <a href="#" class="text-sm font-semibold text-gray-400 hover:text-white transition">Providers</a>
+            <a href="#" class="text-sm font-semibold text-gray-400 hover:text-white transition">Solutions</a>
+            <button class="bg-blue-600 px-6 py-2 rounded-full font-bold text-sm">Login</button>
+        </div>
+    </nav>
+
+    <section class="section" id="hero">
+        <div class="max-w-3xl">
+            <span class="bg-blue-500/10 text-blue-500 px-4 py-1 rounded-full text-xs font-bold border border-blue-500/20 mb-6 inline-block">BOARD-CERTIFIED NETWORK</span>
+            <h1 class="text-7xl font-extrabold leading-tight mb-6">Patient care, <br><span class="text-blue-500 underline decoration-blue-900">evolved.</span></h1>
+            <p class="text-xl text-gray-400 mb-10 leading-relaxed">Beluga bridges the gap between digital convenience and clinical excellence. Integrated with top pharmacies and diagnostic labs nationwide.</p>
+            <div class="flex gap-4">
+                <button class="bg-white text-black px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform">Start Consultation</button>
+                <div class="flex flex-col justify-center">
+                    <span class="text-sm font-bold">4.9/5 Rating</span>
+                    <span class="text-xs text-gray-500">Based on 50k+ reviews</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section py-20" id="trust">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="glass p-8 rounded-3xl stat-card">
+                <h3 class="text-3xl font-bold mb-2">99.8%</h3>
+                <p class="text-gray-500 text-sm italic">Uptime on HIPAA servers</p>
+            </div>
+            <div class="glass p-8 rounded-3xl stat-card">
+                <h3 class="text-3xl font-bold mb-2">15 Min</h3>
+                <p class="text-gray-500 text-sm italic">Average response time</p>
+            </div>
+            <div class="glass p-8 rounded-3xl stat-card">
+                <h3 class="text-3xl font-bold mb-2">50 States</h3>
+                <p class="text-gray-500 text-sm italic">Full US coverage</p>
+            </div>
+            <div class="glass p-8 rounded-3xl stat-card">
+                <h3 class="text-3xl font-bold mb-2">500+</h3>
+                <p class="text-gray-500 text-sm italic">Specialized clinicians</p>
+            </div>
+        </div>
+        <div class="mt-20 flex justify-between items-center opacity-30 grayscale contrast-150 border-t border-white/10 pt-10">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="h-6" alt="Logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Forbes_logo.svg" class="h-6" alt="Logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="h-6" alt="Logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png" class="h-6" alt="Logo">
+        </div>
+    </section>
+
+    <section class="section" id="treatments">
+        <h2 class="text-5xl font-bold mb-12">Specialized <span class="text-blue-500">Verticals.</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass p-10 rounded-[2.5rem] group hover:bg-blue-600/5 transition">
+                <h3 class="text-2xl font-bold mb-4">Urgent Care</h3>
+                <p class="text-gray-400 text-sm mb-6">Immediate help for colds, flu, infections, and allergies. Prescription sent to your local pharmacy in minutes.</p>
+                <div class="space-y-2 mb-8">
+                    <div class="flex items-center gap-2 text-xs text-blue-400"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Script Generation</div>
+                    <div class="flex items-center gap-2 text-xs text-blue-400"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Lab Referrals</div>
+                </div>
+                <button class="font-bold text-blue-500 group-hover:underline">View Specialist →</button>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] border-blue-500/30">
+                <h3 class="text-2xl font-bold mb-4">Mental Health</h3>
+                <p class="text-gray-400 text-sm mb-6">Psychiatric evaluations, talk therapy, and anxiety management from licensed counselors.</p>
+                <div class="space-y-2 mb-8">
+                    <div class="flex items-center gap-2 text-xs text-blue-400"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Ongoing Support</div>
+                    <div class="flex items-center gap-2 text-xs text-blue-400"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Secure Messaging</div>
+                </div>
+                <button class="font-bold text-blue-500">Find Therapist →</button>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem]">
+                <h3 class="text-2xl font-bold mb-4">Men's/Women's</h3>
+                <p class="text-gray-400 text-sm mb-6">Tailored treatments for preventative care, reproductive health, and performance optimization.</p>
+                <div class="space-y-2 mb-8">
+                    <div class="flex items-center gap-2 text-xs text-blue-400"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Discreet Shipping</div>
+                    <div class="flex items-center gap-2 text-xs text-blue-400"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Periodic Labs</div>
+                </div>
+                <button class="font-bold text-blue-500">Start Screening →</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-blue-600/5" id="pricing">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-8 italic">No Surprises.</h2>
+                <p class="text-gray-400 mb-8 leading-relaxed">We believe in transparent healthcare. No subscription required for single visits, or choose a plan for long-term chronic care management.</p>
+                <ul class="space-y-4 font-semibold">
+                    <li class="flex items-center gap-3"><svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> HIPAA Encrypted Infrastructure</li>
+                    <li class="flex items-center gap-3"><svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> Seamless Insurance Processing</li>
+                </ul>
+            </div>
+            <div class="bg-white p-12 rounded-[3rem] text-black shadow-2xl">
+                <span class="text-blue-600 font-bold tracking-widest text-xs">ANNUAL ACCESS</span>
+                <div class="text-6xl font-black mt-4 mb-4">$35<span class="text-xl font-medium">/visit</span></div>
+                <p class="text-gray-500 mb-10">Starting price for acute care visits. Medication cost separate.</p>
+                <button class="w-full bg-black text-white py-5 rounded-2xl font-bold text-lg hover:bg-blue-600 transition-colors">Apply for Membership</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="faq">
+        <h2 class="text-4xl font-bold mb-12">Common Questions</h2>
+        <div class="space-y-4 max-w-4xl">
+            <details class="glass p-6 rounded-2xl group cursor-pointer">
+                <summary class="font-bold flex justify-between items-center list-none">
+                    How do I receive my prescriptions?
+                    <span class="text-blue-500 group-open:rotate-180 transition-transform">↓</span>
+                </summary>
+                <p class="mt-4 text-gray-400 text-sm">Our platform is integrated with 60,000+ pharmacies. Once your provider approves a script, it is electronically transmitted to your chosen location for same-day pickup.</p>
+            </details>
+            <details class="glass p-6 rounded-2xl group cursor-pointer">
+                <summary class="font-bold flex justify-between items-center list-none">
+                    Can I use my existing insurance?
+                    <span class="text-blue-500 group-open:rotate-180 transition-transform">↓</span>
+                </summary>
+                <p class="mt-4 text-gray-400 text-sm">Yes, we accept major PPO plans and can provide superbills for out-of-network reimbursement. We also offer fixed cash-pay prices.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/10">
+        <h2 class="text-6xl font-black mb-8">Get care now.</h2>
+        <button class="bg-blue-600 px-12 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-blue-600 transition-all">Start Intake Form</button>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        /** THREE.JS ENGINE **/
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas3d'), antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // DNA DNA DNA
+        const dnaGroup = new THREE.Group();
+        const sphereGeo = new THREE.SphereGeometry(0.1, 16, 16);
+        const blueMat = new THREE.MeshPhongMaterial({ color: 0x007AFF, emissive: 0x002244 });
+        
+        for (let i = 0; i < 50; i++) {
+            const y = (i * 0.3) - 7.5;
+            const angle = i * 0.5;
+            const s1 = new THREE.Mesh(sphereGeo, blueMat);
+            s1.position.set(Math.cos(angle) * 2, y, Math.sin(angle) * 2);
+            dnaGroup.add(s1);
+            const s2 = new THREE.Mesh(sphereGeo, blueMat);
+            s2.position.set(Math.cos(angle + Math.PI) * 2, y, Math.sin(angle + Math.PI) * 2);
+            dnaGroup.add(s2);
+        }
+        scene.add(dnaGroup);
+        scene.add(new THREE.PointLight(0xffffff, 2.5).set(5,5,5));
+        scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+        camera.position.z = 10;
+
+        /** SCROLL ANIMATIONS (The "Transition" Magic) **/
+        // Initial State
+        gsap.set(dnaGroup.position, { x: 3, y: 0 });
+        gsap.set(dnaGroup.rotation, { z: 0.5 });
+
+        // Scroll Timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1
+            }
+        });
+
+        tl.to(dnaGroup.position, { x: -4, y: -2 })
+          .to(dnaGroup.rotation, { y: Math.PI * 2, z: -0.5 }, 0)
+          .to(dnaGroup.scale, { x: 1.5, y: 1.5, z: 1.5 }, 0.5);
+
+        /** MOUSE FLOW **/
+        const cursor = document.getElementById('cursor-dot');
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+            // Subtle 3D tilt
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 2;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 2;
+            gsap.to(dnaGroup.rotation, { x: moveY * 0.5, y: moveX * 0.5, duration: 1 });
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            dnaGroup.rotation.y += 0.002;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

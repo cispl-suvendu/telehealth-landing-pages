@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #050505;
+    color: white;
+    font-family: 'Syncopate', sans-serif;
+    overflow-x: hidden;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    opacity: 0; /* Animated via GSAP */
+    transform: translateY(50px);
+}
+
+h1, h2 {
+    font-size: clamp(2rem, 8vw, 5rem);
+    margin: 0;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
